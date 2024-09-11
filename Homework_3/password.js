@@ -17,7 +17,7 @@ function isStrongPassword(password) {
 
     // Check the results of the loop and return if there is no number.
     if (!hasNumber) {
-        console.log("You passoword must contain at least one number.");
+        console.log("You password must contain at least one number.");
         return false;
     };
 
@@ -56,10 +56,10 @@ function isStrongPassword(password) {
 
 
 // --------------------- MAIN LOOP ---------------------
-//isStrongPassword("qwerty1");            // false - Too short
-//isStrongPassword("qwerty1234");         // false - contains "1234"
-//isStrongPassword("qwertypassword");     // false - contains "pasword"
+//isStrongPassword("qwert1!");            // false - Too short
+//isStrongPassword("qwerty1234!");         // false - contains "1234"
+//isStrongPassword("qwertypassword1!");     // false - contains "pasword"
 //isStrongPassword("pAsSwOrD1!");         // false - contains variant of "password"
 //isStrongPassword("qwerty123");          // false - has no unique character
 //isStrongPassword("qwertyABC");          // false - no numbers
-//isStrongPassword("qwerty123");          // true
+//isStrongPassword("qwerty123!");          // true
