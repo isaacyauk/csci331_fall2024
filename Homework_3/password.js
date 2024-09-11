@@ -56,9 +56,10 @@ function isStrongPassword(password) {
 
 
 // --------------------- MAIN LOOP ---------------------
-// isStrongPassword("qwerty1");            // false - Too short
-// isStrongPassword("qwerty1234");         // false - contains "1234"
-// isStrongPassword("qwertypassword");     // false - Contains "pasword"
-// isStrongPassword("qwertyABC");          // false - no numbers
-// isStrongPassword("qwerty123");          // true
-isStrongPassword("1adfadfsfdsfdgsdfg");
+//isStrongPassword("qwerty1");            // false - Too short
+//isStrongPassword("qwerty1234");         // false - contains "1234"
+//isStrongPassword("qwertypassword");     // false - contains "pasword"
+//isStrongPassword("pAsSwOrD1!");         // false - contains variant of "password"
+//isStrongPassword("qwerty123");          // false - has no unique character
+//isStrongPassword("qwertyABC");          // false - no numbers
+//isStrongPassword("qwerty123");          // true
