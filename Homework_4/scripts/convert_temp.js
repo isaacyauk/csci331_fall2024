@@ -12,20 +12,16 @@ function domLoaded() {
 }
 
 
-function clearCelsiusField (event) {
+function clearCelsiusField () {
    {
-      console.log("I see " + event.key + "'s of green..."); // Debugging
       document.getElementById("C_in").value = ""; // Clears the value in the Celsius field.
-      console.log("The Celsius field should be cleared"); // Debugging
    }
 }
 
 
-function clearFahrenheitField (event) {
+function clearFahrenheitField () {
    {
-      console.log("I see " + event.key + "'s of green..."); // Debugging
       document.getElementById("F_in").value = ""; // Clears the value in the Celsius field.
-      console.log("The Fahrenheit field should be cleared"); // Debugging
    }
 }
 
@@ -43,6 +39,8 @@ function convertTemps() {
    if (CelsiusINputField.value != "") {
       convertCtoF(CelsiusINputField.value);
    }
+
+   changeImage();
 }
 
 
@@ -54,16 +52,35 @@ function convertCtoF(Cels) {
 
 
 function convertFtoC(Farh) {
-   // °C = (°F - 32) * 5/9
+   // Formula:  °C = (°F - 32) * 5/9
    // Set the Celsius field to the converted value.
    document.getElementById("C_in").value = (Farh - 32) * (5/9);
 }
 
-// TODO: write a fn that can be called with every temp conversion
-// to display the correct weather icon.
-// Based on degrees Fahrenheit:
-// 32 or less, but above -200: cold
-// 90 or more, but below 200: hot
-// between hot and cold: cool
-// 200 or more, -200 or less: dead
-// both input fields are blank: C-F
+
+function changeImage() {
+   // The image changer is based on Fahrenheit, so save the element for cleaner reference.
+   let FahTemp = document.getElementById("F_in");
+
+   // 32 or less, but above -200: cold
+   if (FahTemp.value < 32 && FahTemp.value > (-200)) {
+      // set image to cold
+      document.getElementById("weatherIcon").setAttribute("src", "images/cold.png")
+   } 
+   // 90 or more, but below 200: hot
+   else if (FahTemp.value >= 90 && FahTemp.value < 200) {
+      document.getElementById("weatherIcon").setAttribute("src", "images/hot.png")
+   }
+   // 200 or more, -200 or less: dead
+   else if (FahTemp.value > 200 || FahTemp.value <= (-200)) {
+      document.getElementById("weatherIcon").setAttribute("src", "images/dead.png")
+   }
+   // between hot and cold: cool
+   else {
+      document.getElementById("weatherIcon").setAttribute("src", "images/cool.png")
+   }
+
+   // Ensure both input fields are blank
+   clearCelsiusField();
+   clearFahrenheitField();
+}
