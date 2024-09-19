@@ -1,6 +1,42 @@
- body {
-    font-family: Arial, Helvetica, sans-serif;
- }
- h1 {
-    text-align: center;
- }
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   animation: barrelRoll 20s infinite linear, colorChange 2s infinite linear;
+   background-color: hsl(0, 100%, 50%); /* Initial color */
+}
+
+h1 {
+   text-align: center;
+}
+
+@keyframes barrelRoll {
+   from {
+       transform: rotate(0deg);
+   }
+   to {
+       transform: rotate(360deg);
+   }
+}
+
+@keyframes colorChange {
+   0% {
+       background-color: hsl(0, 100%, 50%); /* Red */
+   }
+   16% {
+       background-color: hsl(60, 100%, 50%); /* Yellow */
+   }
+   33% {
+       background-color: hsl(120, 100%, 50%); /* Green */
+   }
+   50% {
+       background-color: hsl(180, 100%, 50%); /* Cyan */
+   }
+   66% {
+       background-color: hsl(240, 100%, 50%); /* Blue */
+   }
+   83% {
+       background-color: hsl(300, 100%, 50%); /* Magenta */
+   }
+   100% {
+       background-color: hsl(360, 100%, 50%); /* Red (end of cycle) */
+   }
+}

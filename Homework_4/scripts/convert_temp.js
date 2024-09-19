@@ -67,6 +67,10 @@ function changeImage() {
       // set image to cold
       document.getElementById("weatherIcon").setAttribute("src", "images/cold.png")
    } 
+   // between hot and cold: cool
+   else if (FahTemp.value > 32 && FahTemp.value < 90) {
+      document.getElementById("weatherIcon").setAttribute("src", "images/cool.png")
+   }
    // 90 or more, but below 200: hot
    else if (FahTemp.value >= 90 && FahTemp.value < 200) {
       document.getElementById("weatherIcon").setAttribute("src", "images/hot.png")
@@ -75,9 +79,10 @@ function changeImage() {
    else if (FahTemp.value > 200 || FahTemp.value <= (-200)) {
       document.getElementById("weatherIcon").setAttribute("src", "images/dead.png")
    }
-   // between hot and cold: cool
-   else {
-      document.getElementById("weatherIcon").setAttribute("src", "images/cool.png")
+   
+   // If the field was left blank, restore image to default.
+   if (FahTemp.value === "") {
+      document.getElementById("weatherIcon").setAttribute("src", "images/C-F.png")
    }
 
    // Ensure both input fields are blank
