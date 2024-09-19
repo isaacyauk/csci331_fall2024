@@ -2,38 +2,61 @@ window.addEventListener("DOMContentLoaded", domLoaded);
 
 // When the DOM has finished loading, add the event listeners.
 function domLoaded() {
-   // TODO: Use addEventListener() to register a click event handler for the convert button.
-   // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#add_a_simple_listener
+   const FahrenheitInputField = document.getElementById("F_in");
+   const CelsiusINputField = document.getElementById("C_in");
+   const ConvertButton = document.getElementById("convertButton");
 
-   const inputField = document.getElementById("F_in");
-   inputField.addEventListener("keydown", clearCelsiusField);
-   // Add event listeners to handle clearing the box that WAS NOT clicked,
-   // e.g., the element C_in listens for 'input', with a callback fn to
-   // execute after that event does happen. 
-   // You don't send arguments to the event handler function.
-   // So, if you want the event handler to call another function that
-   // DOES take arguments, you can send that other function as a callback.
-   // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#event_listener_with_anonymous_function
-   // Here is an example of anonymous event handler fn that calls alert with an argument:
-   // document.getElementById("weatherIcon").addEventListener("click", function() {alert("You clicked the icon.")})
-
+   FahrenheitInputField.addEventListener("keydown", clearCelsiusField);
+   CelsiusINputField.addEventListener("keydown", clearFahrenheitField);
+   ConvertButton.addEventListener("click", convertTemps);
 }
-// TODO: (Part of the above is to write the functions to be executed when the event handlers are invoked.)
+
+
 function clearCelsiusField (event) {
-   if (event.key === "Enter") {
-      console.log("I see " + event.key + "'s of green...")
-      console.log("The Celsius field should be cleared");
+   {
+      console.log("I see " + event.key + "'s of green..."); // Debugging
+      document.getElementById("C_in").value = ""; // Clears the value in the Celsius field.
+      console.log("The Celsius field should be cleared"); // Debugging
    }
 }
 
-function convertCtoF(C) {
-   // TODO: Return temp in °F. 
-   // °F = °C * 9/5 + 32
+
+function clearFahrenheitField (event) {
+   {
+      console.log("I see " + event.key + "'s of green..."); // Debugging
+      document.getElementById("F_in").value = ""; // Clears the value in the Celsius field.
+      console.log("The Fahrenheit field should be cleared"); // Debugging
+   }
 }
 
-function convertFtoC(F) {
-   // TODO: Return temp in °C. 
+
+function convertTemps() {
+   const FahrenheitInputField = document.getElementById("F_in");
+   const CelsiusINputField = document.getElementById("C_in");
+
+   // Check to see if there has been a value entered into the Fahrenheit field, and then call the method to convert that value to Celsius.
+   if (FahrenheitInputField.value != "") {
+      convertFtoC(FahrenheitInputField.value);
+   } 
+
+   // Check to see if there has been a value entered into the Celsius field, and then call the method to convert that value to Fahrenheit.
+   if (CelsiusINputField.value != "") {
+      convertCtoF(CelsiusINputField.value);
+   }
+}
+
+
+function convertCtoF(Cels) { 
+   // Formula:  °F = °C * 9/5 + 32
+   // Set the Fahrenheit field to the converted value.
+   document.getElementById("F_in").value = (Cels * (9/5)) + 32;
+}
+
+
+function convertFtoC(Farh) {
    // °C = (°F - 32) * 5/9
+   // Set the Celsius field to the converted value.
+   document.getElementById("C_in").value = (Farh - 32) * (5/9);
 }
 
 // TODO: write a fn that can be called with every temp conversion
