@@ -30,6 +30,10 @@ function convertTemps() {
    const FahrenheitInputField = document.getElementById("F_in");
    const CelsiusINputField = document.getElementById("C_in");
 
+   if (FahrenheitInputField.value == "" && CelsiusINputField.value == "") {
+      document.getElementById("message").textContent = "Please enter a temperature to convert.";
+   }
+
    // Check to see if there has been a value entered into the Fahrenheit field, and then call the method to convert that value to Celsius.
    if (FahrenheitInputField.value != "") {
       convertFtoC(FahrenheitInputField.value);

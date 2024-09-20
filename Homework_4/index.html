@@ -8,7 +8,8 @@
       <link rel="stylesheet" href="styles/main.css">
    </head>
    <body>
-      <h1>Temperature<br>Converter</h1>
+      <div id="interface-border">
+         <h1>Temperature<br>Converter</h1>
       <hr>
       <p>
          <input id="F_in" type="number" min="-459.67">
@@ -18,13 +19,30 @@
          <input id="C_in" type="number" min="-273.15">
          <label for="C_in">°C:</label>
       </p>
+
       <input id="convertButton" type="button" value="Convert Units">
-      <p id="message">
-         <!-- Use this to display contextual messages to user.
-            (e.g.: "Enter a temperature to convert," when they click convert with no input) -->
-      </p>
+      <p id="message"></p>
+
       <p>
          <img id="weatherIcon" src="images/C-F.png" alt="C and F">
       </p>
+      
+      <hr>
+      <h2>UI Options:<br></h2>
+      <div class="color-option">
+         <p>Do you like bright colors?</p>
+         <input id="colorButton-yes" type="button" value="Yes">
+         <input id="colorButton-no" type="button" value="No">
+      </div>
+
+      <div class="motion-option">
+         <p>Are you sensitive to motion?</p>
+         <input id="motionButton" type="button" value="Yes">
+         <input type="button" value="No">
+      </div>
+
+         
+      </div>
+      <script src="scripts/UI_aid.js"></script>
    </body>
 </html>

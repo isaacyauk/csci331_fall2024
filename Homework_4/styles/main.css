@@ -1,42 +1,64 @@
 body {
    font-family: Arial, Helvetica, sans-serif;
-   animation: barrelRoll 20s infinite linear, colorChange 2s infinite linear;
-   background-color: hsl(0, 100%, 50%); /* Initial color */
+   text-align: center;
+   padding: 8em;
 }
 
 h1 {
    text-align: center;
 }
 
-@keyframes barrelRoll {
-   from {
-       transform: rotate(0deg);
-   }
-   to {
-       transform: rotate(360deg);
-   }
+#interface-border {
+    border-style: solid;
+    border-color: black;
+    border-radius: 5%;
+    border-width: 1rem;
+    box-sizing: border-box;
+    background-color: lightgrey;
 }
 
-@keyframes colorChange {
-   0% {
-       background-color: hsl(0, 100%, 50%); /* Red */
-   }
-   16% {
-       background-color: hsl(60, 100%, 50%); /* Yellow */
-   }
-   33% {
-       background-color: hsl(120, 100%, 50%); /* Green */
-   }
-   50% {
-       background-color: hsl(180, 100%, 50%); /* Cyan */
-   }
-   66% {
-       background-color: hsl(240, 100%, 50%); /* Blue */
-   }
-   83% {
-       background-color: hsl(300, 100%, 50%); /* Magenta */
-   }
-   100% {
-       background-color: hsl(360, 100%, 50%); /* Red (end of cycle) */
-   }
+img {
+    border-style: solid;
+    border-color: black;
+    border-radius: 25%;
+}
+
+.motion-option {
+    padding-bottom: 1em;
+
+}
+
+body.rotating.colorSpectrum {
+    animation: barrelRoll 1.5s infinite linear, colorSwitch 1.5s infinite linear;
+}
+
+body.rotating {
+    animation: barrelRoll 2s infinite linear; /*5s for full rotation*/
+}
+
+body.colorSpectrum {
+    animation: colorSwitch 1.5s infinite linear;
+}
+
+@keyframes barrelRoll {
+    0% {
+        transform: rotate(0deg) scale(2);
+    }
+    50% {
+        transform: rotate(180deg) scale(0);
+    }
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+
+@keyframes colorSwitch {
+    0% { background-color: red;}
+    16% { background-color: orange;}
+    32% { background-color: yellow;}
+    48% { background-color: green;}
+    64% { background-color: blue;}
+    80% { background-color: indigo;}
+    100% { background-color: violet;}
 }
