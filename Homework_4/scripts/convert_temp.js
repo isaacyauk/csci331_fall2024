@@ -3,11 +3,11 @@ window.addEventListener("DOMContentLoaded", domLoaded);
 // When the DOM has finished loading, add the event listeners.
 function domLoaded() {
    const FahrenheitInputField = document.getElementById("F_in");
-   const CelsiusINputField = document.getElementById("C_in");
+   const CelsiusInputField = document.getElementById("C_in");
    const ConvertButton = document.getElementById("convertButton");
 
    FahrenheitInputField.addEventListener("keydown", clearCelsiusField);
-   CelsiusINputField.addEventListener("keydown", clearFahrenheitField);
+   CelsiusInputField.addEventListener("keydown", clearFahrenheitField);
    ConvertButton.addEventListener("click", convertTemps);
 }
 
@@ -28,9 +28,9 @@ function clearFahrenheitField () {
 
 function convertTemps() {
    const FahrenheitInputField = document.getElementById("F_in");
-   const CelsiusINputField = document.getElementById("C_in");
+   const CelsiusInputField = document.getElementById("C_in");
 
-   if (FahrenheitInputField.value == "" && CelsiusINputField.value == "") {
+   if (FahrenheitInputField.value == "" && CelsiusInputField.value == "") {
       document.getElementById("message").textContent = "Please enter a temperature to convert.";
    }
 
@@ -40,8 +40,8 @@ function convertTemps() {
    } 
 
    // Check to see if there has been a value entered into the Celsius field, and then call the method to convert that value to Fahrenheit.
-   if (CelsiusINputField.value != "") {
-      convertCtoF(CelsiusINputField.value);
+   if (CelsiusInputField.value != "") {
+      convertCtoF(CelsiusInputField.value);
    }
 
    changeImage();
@@ -88,8 +88,4 @@ function changeImage() {
    if (FahTemp.value === "") {
       document.getElementById("weatherIcon").setAttribute("src", "images/C-F.png")
    }
-
-   // Ensure both input fields are blank
-   clearCelsiusField();
-   clearFahrenheitField();
 }
