@@ -6,59 +6,81 @@
 
     <title>RPG Character Creation</title>
 </head>
+<!-- Use 'class' for CSS and 'id' for JavaScript! -->
 <body>
     <form action="form-viewer.php" method="GET">
         
         <fieldset>
             <legend>Details & Origin</legend>
 
+            <!-- Text Entry -->
             <label for="char-name">Character Name:</label>
+            <br>
             <input type="text" name="character-name" id="char-name">
-            <br>
 
-            <p id="classlist-header">Class:</p>
+            <!-- Radio Button Entry -->
+<!-- TODO: Style all these headers! (Meld them with the form a bit more) -->
+            <p class="classlist-header">Class:</p>
             <!-- The 'name' attribute MUST be matching if you want them to be from the same group! -->
-            <input type="radio" name="class-opt" id="c-rb1" value="Warrior">
-            <label for="c-rb1">Warrior</label>
-            
-            <br>
-            <input type="radio" name="class-opt" id="c-rb2" value="Ranger">
-            <label for="c-rb2">Ranger</label>
-            
-            <br>
-            <input type="radio" name="class-opt" id="c-rb3" value="Barbarian">
-            <label for="c-rb3">Barbarian</label>
-            
-            <br>
-            <input type="radio" name="class-opt" id="c-rb4" value="Bard">
-            <label for="c-rb4">Bard</label>
-            
-            <br>
-            <input type="radio" name="class-opt" id="c-rb5" value="Mage">
-            <label for="c-rb">Mage</label>
-            
-            <br>
-            <input type="radio" name="class-opt" id="c-rb6" value="Beastmaster">
-            <label for="c-rb6">Beastmaster</label>
+            <div class="classlist">
+                <input type="radio" name="class-opt" id="c-rb1" value="Warrior">
+                <label for="c-rb1">Warrior</label>
+                
+                <br>
+                <input type="radio" name="class-opt" id="c-rb2" value="Ranger">
+                <label for="c-rb2">Ranger</label>
+                
+                <br>
+                <input type="radio" name="class-opt" id="c-rb3" value="Barbarian">
+                <label for="c-rb3">Barbarian</label>
+                
+                <br>
+                <input type="radio" name="class-opt" id="c-rb4" value="Bard">
+                <label for="c-rb4">Bard</label>
+                
+                <br>
+                <input type="radio" name="class-opt" id="c-rb5" value="Mage">
+                <label for="c-rb">Mage</label>
+                
+                <br>
+                <input type="radio" name="class-opt" id="c-rb6" value="Beastmaster">
+                <label for="c-rb6">Beastmaster</label>
+            </div>
 
-            
+            <!-- Option Entry -->
+            <p class="gender-header">Gender:</p>
+            <select name="gender-list" id="gender-optn">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="skip">Prefer not to say</option>
+            </select>
 
+        </fieldset>
 
-            <p id="gender-header">Gender:</p>
-            <!-- The 'name' attribute MUST be matching if you want them to be from the same group! -->
-            <input type="radio" name="gender-opt" id="g-rb1" value="Male">
-            <label for="g-rb1">Male</label>
-            
-            <input type="radio" name="gender-opt" id="g-rb2" value="Female">
-            <label for="g-rb2">Female</label>
-            
-            
-            
-        <!-- TODO: need 3 checkboxes -->
-        <!-- TODO: need 3 radios -->
-        <!-- TODO: need option (must have 3 choices inside) -->
-        <!-- TODO: need select multiple (must submit as an array) -->
-        <!-- TODO: need another input type. -->
+        <fieldset>
+            <legend>Skills</legend>
+
+            <!-- Checkbox Entry -->
+            <p class="weapon-proficiency">Weapon Proficiency:</p>
+            <input type="checkbox" name="weapon-opt" id="w-cb1" value="Sword">
+                <label for="w-cb1">Sword</label>
+
+                <input type="checkbox" name="weapon-opt" id="w-cb2" value="Bow">
+                <label for="w-cb2">Bow</label>
+
+                <input type="checkbox" name="weapon-opt" id="w-cb3" value="Battleaxe">
+                <label for="w-cb3">Battleaxe</label>
+
+                <input type="checkbox" name="weapon-opt" id="w-cb4" value="Spear">
+                <label for="w-cb4">Spear</label>
+
+                <input type="checkbox" name="weapon-opt" id="w-cb5" value="Lute">
+                <label for="w-cb5">Lute</label>
+
+                <input type="checkbox" name="weapon-opt" id="w-cb6" value="Lute">
+                <label for="w-cb6">Staff</label>
+
+<!-- TODO: need select multiple (must submit as an array) -->
         </fieldset>
 
         <input type="submit" value="Create Character">
