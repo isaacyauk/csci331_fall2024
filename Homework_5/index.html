@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RPG Character Creation</title>
+</head>
+<body>
+    <form action="form-viewer.php" method="GET">
+        
+        <fieldset>
+            <legend>Details & Origin</legend>
+
+            <label for="char-name">Character Name:</label>
+            <input type="text" name="character-name" id="char-name">
+            <br>
+
+            <p id="classlist-header">Class:</p>
+            <!-- The 'name' attribute MUST be matching if you want them to be from the same group! -->
+            <input type="radio" name="class-opt" id="c-rb1" value="Warrior">
+            <label for="c-rb1">Warrior</label>
+            
+            <br>
+            <input type="radio" name="class-opt" id="c-rb2" value="Ranger">
+            <label for="c-rb2">Ranger</label>
+            
+            <br>
+            <input type="radio" name="class-opt" id="c-rb3" value="Barbarian">
+            <label for="c-rb3">Barbarian</label>
+            
+            <br>
+            <input type="radio" name="class-opt" id="c-rb4" value="Bard">
+            <label for="c-rb4">Bard</label>
+            
+            <br>
+            <input type="radio" name="class-opt" id="c-rb5" value="Mage">
+            <label for="c-rb">Mage</label>
+            
+            <br>
+            <input type="radio" name="class-opt" id="c-rb6" value="Beastmaster">
+            <label for="c-rb6">Beastmaster</label>
+
+            
+
+
+            <p id="gender-header">Gender:</p>
+            <!-- The 'name' attribute MUST be matching if you want them to be from the same group! -->
+            <input type="radio" name="gender-opt" id="g-rb1" value="Male">
+            <label for="g-rb1">Male</label>
+            
+            <input type="radio" name="gender-opt" id="g-rb2" value="Female">
+            <label for="g-rb2">Female</label>
+            
+            
+            
+        <!-- TODO: need 3 checkboxes -->
+        <!-- TODO: need 3 radios -->
+        <!-- TODO: need option (must have 3 choices inside) -->
+        <!-- TODO: need select multiple (must submit as an array) -->
+        <!-- TODO: need another input type. -->
+        </fieldset>
+
+        <input type="submit" value="Create Character">
+    </form>
+    
+</body>
+</html>
