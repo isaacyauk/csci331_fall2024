@@ -19,16 +19,16 @@
     // Collect input using POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $firstname = htmlspecialchars($_POST['first']);
-        // TODO: set lastname and country in the same manner as above
+        $lastname = htmlspecialchars($_POST['last']);
+        $country = htmlspecialchars($_POST['country']);
 
-        echo "<p>Adding <strong>$firstname</strong>.</p>";
+        echo "<p>Adding <strong>$firstname $lastname</strong> from <strong>$country</strong>.</p>";
 
         // DATABASE OPERATIONS:
-        // TODO: this MUST be updated to your own credentials to work on your MariaDB
         $servername = "localhost";   // same for local dev and school server
-        $username = "userXX";        // get this from the email
-        $password = "XXyyyy";        // get this from the email 
-        $dbname = "dbXX";            // get this from the email
+        $username = "user50";
+        $password = "50dato";
+        $dbname = "db50";
 
         try {
             // Create a PDO connection (PHP Data Object)
