@@ -57,6 +57,7 @@ nav ul li:hover {
 
 #equals-bttn {
     margin: 10px;
+    padding: 10px;
     text-shadow: 0.8px 0.8px;
 }
 
@@ -126,5 +127,11 @@ nav ul li a {
         width: 160px;
         height: 160px;
         margin-left: 10vw;
+    }
+
+    #equals-bttn {
+        margin: 10px;
+        padding: 40px;
+        text-shadow: 0.8px 0.8px;
     }
 }
