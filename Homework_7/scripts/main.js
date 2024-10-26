@@ -1,11 +1,13 @@
 function setDynamicImage() {
     const image = document.getElementById("dynamic-image");
+    const greaterThanButton = document.getElementById("gte-bttn");
+    const lessThanButton = document.getElementById("lte-bttn");
 
     if (window.innerWidth > 640) {
-        image.src = "/images/machine1280w.jpg";
+        image.src = "images/machine1280w.jpg";
     }
     else {
-        image.src = "/images/machine640w.jpg";
+        image.src = "images/machine640w.jpg";
     }
 }
 
