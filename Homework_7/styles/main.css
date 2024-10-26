@@ -55,6 +55,11 @@ nav ul li:hover {
     text-shadow: 0.8px 0.8px;
 }
 
+#equals-bttn {
+    margin: 10px;
+    text-shadow: 0.8px 0.8px;
+}
+
 .calculator-bttn {
     border: 5px solid #555;
     border-radius: 100px;

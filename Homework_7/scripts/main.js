@@ -1,7 +1,5 @@
 function setDynamicImage() {
     const image = document.getElementById("dynamic-image");
-    const greaterThanButton = document.getElementById("gte-bttn");
-    const lessThanButton = document.getElementById("lte-bttn");
 
     if (window.innerWidth > 640) {
         image.src = "images/machine1280w.jpg";
@@ -11,8 +9,14 @@ function setDynamicImage() {
     }
 }
 
+
+function compute() {
+    console.log("'=' button pressed!")
+}
 // Call the setDynamicImage function when the DOM is loaded.
 document.addEventListener("DOMContentLoaded", setDynamicImage);
     
 // Listen for a resize event and call the function on resize.
 window.addEventListener("resize", setDynamicImage);
+
+document.addEventListener("click", compute);
